@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import ItemList from "./ItemList";
 
-function ItemListContainer({greeting}) {
-    return (
-        <>
-            <p>{greeting}</p>
-        </>
-    )
+function ItemListContainer({ greeting }) {
+  return (
+    <div>
+      <p>{greeting}</p>
+      <ItemList />
+    </div>
+  );
 }
 
-export default ItemListContainer
+export default ItemListContainer;
