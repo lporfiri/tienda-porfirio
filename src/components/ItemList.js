@@ -40,9 +40,7 @@ function ItemList() {
             max={product.max}
           />
         ))}
-        ;
       </div>
-      <Item />
     </>
   );
 }
