@@ -24,10 +24,11 @@ function ItemList() {
       }
     );
   }, []);
+
   return (
     <>
       {loading && <Loading />}
-      <div className="row">
+      <>
         {products.map((product) => (
           <Item
             id={product.id}
@@ -40,7 +41,7 @@ function ItemList() {
             max={product.max}
           />
         ))}
-      </div>
+      </>
     </>
   );
 }

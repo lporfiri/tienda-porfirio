@@ -1,18 +1,41 @@
 import React from "react";
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemCount from "./components/ItemCount";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
-const msg = "Bienvenido a la tienda!";
+// pages
+// Accesorios, Calzados, Ropa
+import Home from "./pages/Home";
+import Accesorios from "./pages/Accesorios";
+import Calzados from "./pages/Calzados";
+import Ropa from "./pages/Ropa";
+
+// components
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <div className="container-fluid">
-        <ItemListContainer greeting={msg} />
-      </div>
+      <h1>CONTACHUELAS</h1>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route exact path="/Accesorios">
+            <Accesorios />
+          </Route>
+
+          <Route exact path="/Calzados">
+            <Calzados />
+          </Route>
+
+          <Route exact path="/Ropa">
+            <Ropa />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

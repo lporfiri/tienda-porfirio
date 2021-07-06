@@ -26,14 +26,16 @@ function Item({ id, name, stock, price, img, description }) {
     <>
       <div className="card" style={style.card}>
         <h5 className="card-title">{name}</h5>
-        <img className="img-thumbnail" src={img} style={style.image} alt="#!" />
-        <p className="card-text">{description}</p>
-        <p className="card-text">${price}</p>
-        <ItemCount
-          initial={1}
-          stock={5}
-          onAdd={() => console.log("agregado")}
-        />
+        <img className="card-img-top" src={img} style={style.image} alt="#!" />
+        <div class="card-body">
+          <p className="card-text">{description}</p>
+          <p className="card-text">${price}</p>
+          <ItemCount
+            initial={1}
+            stock={5}
+            onAdd={() => console.log("agregado")}
+          />
+        </div>
       </div>
     </>
   );

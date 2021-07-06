@@ -1,5 +1,6 @@
 import React from "react";
 import CardWidget from "./CardWidget";
+import { Link } from "react-router-dom";
 
 const menus = [
   {
@@ -23,13 +24,9 @@ const menus = [
 function NavBar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <CardWidget />
-          <a className="navbar-brand" href="#!">
-            {" "}
-            CONTACHUELAS{" "}
-          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -44,17 +41,45 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#!">
-                  INICIO
-                </a>
+                <Link className="nav-link active" aria-current="page" to={"/"}>
+                  Home
+                </Link>
               </li>
-              {menus.map((menu) => (
-                <li className="nav-item">
-                  <a className="nav-link" href="#!">
-                    {menu.categoria}
-                  </a>
-                </li>
-              ))}
+
+              <li className="nav-item">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to={"/Ropa"}
+                >
+                  Ropa
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to={"/Calzados"}
+                >
+                  Calzados
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to={"/Accesorios"}
+                >
+                  Accesorios
+                </Link>
+              </li>
+              {/* {menus.map((menu) => (
+                <Link to="{menu.categoria}" className="nav-link">
+                  {menu.categoria}
+                </Link>
+              ))} */}
             </ul>
           </div>
         </div>
